@@ -1,0 +1,242 @@
+[
+    {
+        "input": {
+            "complaint": "The main transformer is overheating and we noticed sparking near the power supply unit"
+        },
+        "expected_output": {
+            "ticket_id": 1,
+            "status": "processed",
+            "input": {
+                "complaint": "The main transformer is overheating and we noticed sparking near the power supply unit"
+            },
+            "classification": {
+                "category": "Electrical",
+                "confidence": 0.72,
+                "confidence_pct": "72%",
+                "scores": {
+                    "Electrical": 0.72,
+                    "Mechanical": 0.22,
+                    "Sensor": 0.06
+                }
+            },
+            "priority_assessment": {
+                "priority": "High",
+                "reasoning": "Urgent keywords detected: overheating, sparking. Category 'Electrical' bias factor: 1.5x."
+            },
+            "analysis": {
+                "keywords_matched": ["transformer", "power supply", "sparking", "overheating"],
+                "keyword_count": 4
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "Conveyor belt bearing is worn out and making a loud grinding noise"
+        },
+        "expected_output": {
+            "ticket_id": 2,
+            "status": "processed",
+            "input": {
+                "complaint": "Conveyor belt bearing is worn out and making a loud grinding noise"
+            },
+            "classification": {
+                "category": "Mechanical",
+                "confidence": 0.95,
+                "confidence_pct": "95%",
+                "scores": {
+                    "Electrical": 0.0,
+                    "Mechanical": 0.95,
+                    "Sensor": 0.05
+                }
+            },
+            "priority_assessment": {
+                "priority": "Medium",
+                "reasoning": "Degraded performance indicators detected: worn, loud."
+            },
+            "analysis": {
+                "keywords_matched": ["conveyor belt", "bearing", "worn out", "grinding noise"],
+                "keyword_count": 4
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "Temperature sensor on reactor #3 is giving false readings and needs recalibration"
+        },
+        "expected_output": {
+            "ticket_id": 3,
+            "status": "processed",
+            "input": {
+                "complaint": "Temperature sensor on reactor #3 is giving false readings and needs recalibration"
+            },
+            "classification": {
+                "category": "Sensor",
+                "confidence": 0.91,
+                "confidence_pct": "91%",
+                "scores": {
+                    "Electrical": 0.0,
+                    "Mechanical": 0.0,
+                    "Sensor": 0.91
+                }
+            },
+            "priority_assessment": {
+                "priority": "Medium",
+                "reasoning": "Degraded performance indicators detected: erratic."
+            },
+            "analysis": {
+                "keywords_matched": ["temperature sensor", "false readings", "recalibration"],
+                "keyword_count": 3
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "Minor paint scratch on the equipment housing panel, purely cosmetic"
+        },
+        "expected_output": {
+            "ticket_id": 4,
+            "status": "processed",
+            "input": {
+                "complaint": "Minor paint scratch on the equipment housing panel, purely cosmetic"
+            },
+            "classification": {
+                "category": "Unknown",
+                "confidence": 0.0,
+                "confidence_pct": "0%",
+                "scores": {
+                    "Electrical": 0.0,
+                    "Mechanical": 0.0,
+                    "Sensor": 0.0
+                }
+            },
+            "priority_assessment": {
+                "priority": "Low",
+                "reasoning": "Routine/minor maintenance indicators: minor, cosmetic, paint, scratch."
+            },
+            "analysis": {
+                "keywords_matched": [],
+                "keyword_count": 0
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "Emergency! The circuit breaker tripped and there's a burning smell from the electrical panel. Production line is completely down."
+        },
+        "expected_output": {
+            "ticket_id": 5,
+            "status": "processed",
+            "input": {
+                "complaint": "Emergency! The circuit breaker tripped and there's a burning smell from the electrical panel. Production line is completely down."
+            },
+            "classification": {
+                "category": "Electrical",
+                "confidence": 0.88,
+                "confidence_pct": "88%",
+                "scores": {
+                    "Electrical": 0.88,
+                    "Mechanical": 0.08,
+                    "Sensor": 0.04
+                }
+            },
+            "priority_assessment": {
+                "priority": "High",
+                "reasoning": "Urgent keywords detected: emergency, burning, tripped. Category 'Electrical' bias factor: 1.5x."
+            },
+            "analysis": {
+                "keywords_matched": ["circuit breaker", "electrical panel", "tripped", "burning"],
+                "keyword_count": 4
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "The hydraulic pump is leaking fluid and the shaft coupling shows signs of misalignment"
+        },
+        "expected_output": {
+            "ticket_id": 6,
+            "status": "processed",
+            "input": {
+                "complaint": "The hydraulic pump is leaking fluid and the shaft coupling shows signs of misalignment"
+            },
+            "classification": {
+                "category": "Mechanical",
+                "confidence": 0.90,
+                "confidence_pct": "90%",
+                "scores": {
+                    "Electrical": 0.0,
+                    "Mechanical": 0.90,
+                    "Sensor": 0.10
+                }
+            },
+            "priority_assessment": {
+                "priority": "Medium",
+                "reasoning": "Degraded performance indicators detected: leaking, misalignment."
+            },
+            "analysis": {
+                "keywords_matched": ["hydraulic", "pump", "shaft", "coupling", "misalignment", "leaking"],
+                "keyword_count": 6
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "The pressure sensor and flow meter on line 4 are showing intermittent signal loss and need calibration"
+        },
+        "expected_output": {
+            "ticket_id": 7,
+            "status": "processed",
+            "input": {
+                "complaint": "The pressure sensor and flow meter on line 4 are showing intermittent signal loss and need calibration"
+            },
+            "classification": {
+                "category": "Sensor",
+                "confidence": 0.93,
+                "confidence_pct": "93%",
+                "scores": {
+                    "Electrical": 0.0,
+                    "Mechanical": 0.0,
+                    "Sensor": 0.93
+                }
+            },
+            "priority_assessment": {
+                "priority": "Medium",
+                "reasoning": "Degraded performance indicators detected: intermittent."
+            },
+            "analysis": {
+                "keywords_matched": ["pressure sensor", "flow meter", "signal loss", "calibration", "intermittent signal"],
+                "keyword_count": 5
+            }
+        }
+    },
+    {
+        "input": {
+            "complaint": "Please schedule routine lubrication for all conveyor rollers during the next planned maintenance window"
+        },
+        "expected_output": {
+            "ticket_id": 8,
+            "status": "processed",
+            "input": {
+                "complaint": "Please schedule routine lubrication for all conveyor rollers during the next planned maintenance window"
+            },
+            "classification": {
+                "category": "Mechanical",
+                "confidence": 0.78,
+                "confidence_pct": "78%",
+                "scores": {
+                    "Electrical": 0.0,
+                    "Mechanical": 0.78,
+                    "Sensor": 0.22
+                }
+            },
+            "priority_assessment": {
+                "priority": "Low",
+                "reasoning": "Routine/minor maintenance indicators: routine, scheduled, lubrication, planned."
+            },
+            "analysis": {
+                "keywords_matched": ["lubrication", "conveyor", "roller"],
+                "keyword_count": 3
+            }
+        }
+    }
+]
